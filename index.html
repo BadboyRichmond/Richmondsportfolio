@@ -26,6 +26,7 @@
         <section id="home">
             <h2>Welcome to My Portfolio</h2>
             <p>Hi, I'm Richmond Ndukwe, an IT Specialist and a network administrator. Open to great job opportunities in the IT field.</p>
+            <button id="alertButton">Click me for an alert</button>
         </section>
         <section id="about">
             <h2>About Me</h2>
@@ -110,6 +111,23 @@
     <footer>
         <p>&copy; 2024 Richmond Ndukwe. All rights reserved.</p>
     </footer>
-    <script src="scripts.js"></script>
+    <script>
+        // JavaScript for the alert button
+        document.getElementById('alertButton').addEventListener('click', function() {
+            alert('Button clicked!');
+        });
+
+        // JavaScript for the contact form submission
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            document.getElementById('form-response').innerText = `Thank you, ${name}! Your message has been sent.`;
+            
+            // Optionally, you can add code here to send the form data to a server
+        });
+    </script>
 </body>
 </html>
